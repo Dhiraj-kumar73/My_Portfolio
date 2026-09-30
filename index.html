@@ -27,20 +27,75 @@
     <meta property="twitter:image" content="https://yourportfolio.com/dhiraj.jpg">
 
     <!-- CSS File -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=8.0">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+    <!-- Preloader / Splash Screen (Personalized Avatar Interface) -->
+    <div id="preloader" class="preloader animate-in">
+        <!-- Cosmic Ambient Glow Orbs -->
+        <div class="preloader-orb orb-1"></div>
+        <div class="preloader-orb orb-2"></div>
+        <div class="preloader-orb orb-3"></div>
+        
+        <div class="preloader-content-card personalized-card">
+            <!-- Center Avatar Glowing Ring -->
+            <div class="avatar-glow-ring">
+                <img src="assets/images/profile/about.png" alt="Dhiraj Kumar" class="preloader-avatar-img">
+            </div>
+
+            <!-- Title & Subtitle Group -->
+            <h2 class="preloader-greet">Hi, I am</h2>
+            <h1 class="preloader-title">Dhiraj <span class="text-gradient">Kumar</span></h1>
+            <p class="preloader-subtitle">Frontend Developer & BCA Student</p>
+            
+            <!-- Interactive Action Button -->
+            <div class="preloader-action-container">
+                <button id="start-experience-btn" class="start-experience-btn discover-btn">
+                    <span class="btn-text">Enter Portfolio</span>
+                    <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Voiceover Video (Low Opacity Backdrop) -->
+    <video id="welcome-video" src="videos/Welcome.mp4" playsinline class="bg-welcome-video"></video>
+
+    <!-- Floating Audio Control Widget -->
+    <div id="audio-control-widget" class="audio-control-widget hide">
+        <span class="sound-wave">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </span>
+        <span class="widget-text">Welcome Voice Playing</span>
+        <button id="mute-widget-btn" aria-label="Mute welcome audio">
+            <i class="fas fa-volume-up"></i>
+        </button>
+    </div>
+
     <!-- Particles Canvas -->
     <canvas id="particles-canvas"></canvas>
 
+    <!-- Ambient Glowing Background Elements -->
+    <div class="ambient-glow bg-glow-1"></div>
+    <div class="ambient-glow bg-glow-2"></div>
+    <div class="ambient-glow bg-glow-3"></div>
+
     <!-- Navigation Bar -->
     <header>
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
         <div id="menu-icon">
             <span></span>
             <span></span>
@@ -55,6 +110,7 @@
             <a href="#services">Services</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
+            <a href="#memories">Memories</a>
             <a href="#contact">Contact</a>
         </nav>
 
@@ -75,12 +131,12 @@
             </p>
             <div class="btn-group">
                 <a href="#contact" class="btn btn-primary">Hire Me <i class="fas fa-arrow-right"></i></a>
-                <a href="pages/resume.html" class="btn btn-outline">Get Resume</a>
+                <a href="#resume" class="btn btn-outline" id="resume-btn">Get Resume</a>
             </div>
         </div>
 
         <div class="home-img" data-reveal="right">
-            <img src="assets/images/dhiraj.jpg" alt="Dhiraj Kumar" loading="lazy">
+            <img src="assets/images/profile/dhiraj.jpg" alt="Dhiraj Kumar" loading="lazy">
         </div>
     </section>
 
@@ -89,7 +145,7 @@
         <div class="about-container">
             <div class="about-img" data-reveal="left">
                 <div class="img-box glass-card">
-                    <img src="assets/images/about.png" alt="Dhiraj Kumar">
+                    <img src="assets/images/profile/about.png" alt="Dhiraj Kumar">
                     <div class="img-badge">
                         <i class="fas fa-graduation-cap"></i>
                         <span>BCA STUDENT</span>
@@ -102,16 +158,13 @@
                 <h2 class="section-title text-left mb-20">About <span>Me</span></h2>
                 <h3>Frontend Developer</h3>
                 <p>
-                    I am a driven <strong>BCA (Bachelor of Computer Applications) student currently in my 5th
-                        semester</strong>,
-                    specializing in modern frontend architectures and high-performance web solutions. My academic
-                    journey has provided me with a robust understanding of computer science fundamentals, while my
-                    personal passion drives me to master the latest industry-standard technologies.
+                    I am a passionate BCA student with a strong interest in frontend development and creating modern, responsive, and user-friendly web applications. I enjoy turning ideas into interactive digital experiences using HTML, CSS, JavaScript, and React.js.
                 </p>
                 <p>
-                    I thrive at the intersection of design and logic, crafting immersive user experiences that are as
-                    functional as they are visually stunning. With a focus on clean code and scalable design, I am
-                    committed to delivering digital products that truly resonate with users and solve complex problems.
+                    I continuously improve my skills by building real-world projects and exploring the latest web technologies. I believe in writing clean, maintainable code and creating interfaces that are both visually appealing and highly functional.
+                </p>
+                <p>
+                    As a quick learner and enthusiastic problem solver, I am eager to begin my career as a Frontend Developer, contribute to innovative projects, and grow alongside experienced professionals while delivering impactful digital solutions.
                 </p>
 
 
@@ -286,10 +339,10 @@
         </div>
 
         <div class="view-all-container" data-reveal="bottom">
-            <a href="projects.html" class="btn btn-outline">
+            <button id="view-all-projects-btn" class="btn btn-outline">
                 <span>View All Projects</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
+                <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
     </section>
 
@@ -421,9 +474,34 @@
     <section class="certificates" id="certificates">
         <h2 class="section-title" data-reveal>My <span>Certifications</span></h2>
         <div class="certificates-container">
+            <!-- 1. Python for Beginners (Simplilearn SkillUp) -->
             <div class="cert-card glass-card" data-reveal="bottom">
                 <div class="cert-img">
-                    <img src="assets/images/cert-kyp.jpg" alt="KYP Certificate">
+                    <img src="assets/images/certificates/cert-python.jpg" alt="Python for Beginners">
+                </div>
+                <div class="cert-info">
+                    <h3>Python for Beginners</h3>
+                    <p>Foundations of Python programming, core data structures, algorithms, and development logic.</p>
+                    <span class="cert-date">Simplilearn SkillUp • Code: 10726110</span>
+                </div>
+            </div>
+
+            <!-- 2. Ethical Hacking 101 (Simplilearn SkillUp) -->
+            <div class="cert-card glass-card" data-reveal="bottom">
+                <div class="cert-img">
+                    <img src="assets/images/certificates/cert-ethical-hacking.jpg" alt="Ethical Hacking 101">
+                </div>
+                <div class="cert-info">
+                    <h3>Ethical Hacking 101</h3>
+                    <p>Beginners guide to cybersecurity fundamentals, network defense, scanning, and protocols.</p>
+                    <span class="cert-date">Simplilearn SkillUp • Code: 10726568</span>
+                </div>
+            </div>
+
+            <!-- 3. KYP -->
+            <div class="cert-card glass-card" data-reveal="bottom">
+                <div class="cert-img">
+                    <img src="assets/images/certificates/cert-kyp.jpg" alt="KYP Certificate">
                 </div>
                 <div class="cert-info">
                     <h3>Kushal Yuva Program (KYP)</h3>
@@ -434,7 +512,7 @@
 
             <div class="cert-card glass-card" data-reveal="bottom">
                 <div class="cert-img">
-                    <img src="assets/images/cert-cultural.jpg" alt="Cultural Program Winner">
+                    <img src="assets/images/certificates/cert-cultural.jpg" alt="Cultural Program Winner">
                 </div>
                 <div class="cert-info">
                     <h3>Cultural Program Winner</h3>
@@ -445,7 +523,7 @@
 
             <div class="cert-card glass-card" data-reveal="bottom">
                 <div class="cert-img">
-                    <img src="assets/images/cert-rangoli.jpg" alt="Rangoli Competition Winner">
+                    <img src="assets/images/certificates/cert-rangoli.jpg" alt="Rangoli Competition Winner">
                 </div>
                 <div class="cert-info">
                     <h3>Rangoli Competition Winner</h3>
@@ -455,12 +533,14 @@
             </div>
         </div>
         <div class="view-all-container" data-reveal="bottom">
-            <a href="pages/certificates.html" class="btn btn-outline">
+            <button id="view-all-certs-btn" class="btn btn-outline">
                 <span>View All Certifications</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
+                <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
     </section>
+
+
 
     <!-- Contact -->
     <section class="contact" id="contact">
@@ -578,6 +658,875 @@
         </div>
     </div>
 
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="modal resume-modal">
+        <div class="modal-content resume-modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body resume-modal-body">
+                <div class="resume-dashboard">
+                    <!-- Left Sidebar -->
+                    <div class="resume-sidebar">
+                        <div class="sidebar-profile">
+                            <div class="profile-avatar">
+                                <img src="assets/images/profile/dhiraj.jpg" alt="Dhiraj Kumar">
+                                <div class="pulse-indicator-badge">
+                                    <span class="status-dot"></span>
+                                </div>
+                            </div>
+                            <h2>Dhiraj <span class="text-gradient">Kumar</span></h2>
+                            <p class="role-text">BCA Student</p>
+                            
+                            <div class="resume-status-badge">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Available for Hire</span>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-contact-info">
+                            <div class="contact-card">
+                                <div class="icon-box"><i class="fas fa-phone"></i></div>
+                                <div class="contact-details">
+                                    <span class="label">PHONE</span>
+                                    <span class="val">+91 7367807523</span>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-details">
+                                    <span class="label">EMAIL</span>
+                                    <span class="val">yadavdhirajkumar944@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="icon-box"><i class="fas fa-calendar-day"></i></div>
+                                <div class="contact-details">
+                                    <span class="label">D.O.B & GENDER</span>
+                                    <span class="val">02/02/2006 | Male</span>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="icon-box"><i class="fas fa-location-dot"></i></div>
+                                <div class="contact-details">
+                                    <span class="label">ADDRESS</span>
+                                    <span class="val" title="Vill - Durguali, Po - Bansohi, PS - Mashrakh, Dist - Saran, Bihar - 841417">Vill - Durguali, Saran, Bihar</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-action">
+                            <a href="assets/docs/Dhiraj-Resume.pdf" target="_blank" class="resume-action-btn btn-view">
+                                <i class="fas fa-eye"></i>
+                                <span>View Resume</span>
+                            </a>
+                            <a href="assets/docs/Dhiraj-Resume.pdf" download="Dhiraj_Kumar_Resume.pdf" class="resume-action-btn btn-download">
+                                <i class="fas fa-download"></i>
+                                <span>Download Resume</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Main Content Panel -->
+                    <div class="resume-main-content">
+                        <!-- About Me -->
+                        <div class="resume-panel-section">
+                            <h3 class="panel-section-title"><i class="fas fa-user-tie"></i> About Me</h3>
+                            <p class="timeline-desc" style="font-size: 0.95rem; line-height: 1.6;">
+                                I am a BCA graduate with a strong interest in computer applications and software development. I have good knowledge of programming languages like Python and Java, along with web technologies such as HTML and CSS. I am a quick learner and always eager to explore new technologies. I am looking for an opportunity to start my career in the IT field and enhance my technical and professional skills.
+                            </p>
+                        </div>
+
+                        <!-- Education -->
+                        <div class="resume-panel-section">
+                            <h3 class="panel-section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                            <div class="resume-timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">2024 - Present</span>
+                                        <h4>BCA (Computer Applications)</h4>
+                                        <p class="timeline-org">Himalaya College of Professional Education (Patna) | Aryabhatta Knowledge University</p>
+                                        <div class="timeline-scores" style="margin-top: 10px; display: grid; gap: 8px;">
+                                            <span style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.7);"><i class="fas fa-chevron-right" style="color: var(--main-color); margin-right: 8px; font-size: 0.75rem;"></i> 1st Sem Result: <strong>SGPA 9.00</strong></span>
+                                            <span style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.7);"><i class="fas fa-chevron-right" style="color: var(--main-color); margin-right: 8px; font-size: 0.75rem;"></i> 2nd Sem Result: <strong>SGPA 8.77</strong></span>
+                                            <span style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.7);"><i class="fas fa-chevron-right" style="color: var(--main-color); margin-right: 8px; font-size: 0.75rem;"></i> 3rd Sem Result: <strong>SGPA 9.29</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">2022 - 2024</span>
+                                        <h4>Intermediate Annual Examination (12th)</h4>
+                                        <p class="timeline-org">M.R.DAS H/S CUM INTER COLLEGE, Bahuaramath, Saran | BSEB</p>
+                                        <p class="timeline-desc">Secured first division with a percentage of <strong>59%</strong>.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <span class="timeline-date">2021 - 2022</span>
+                                        <h4>Secondary School Exams (10th)</h4>
+                                        <p class="timeline-org">M.R.DAS H/S CUM INTER COLLEGE, Bahuaramath, Saran | BSEB</p>
+                                        <p class="timeline-desc">Secured a percentage of <strong>42%</strong>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Skills -->
+                        <div class="resume-panel-section">
+                            <h3 class="panel-section-title"><i class="fas fa-code"></i> Tech Stack & Expertise</h3>
+                            <div class="resume-skills-categories">
+                                <div class="skills-category-group">
+                                    <span class="category-label">Languages & Core</span>
+                                    <div class="skills-tags-list">
+                                        <span class="skill-badge html">HTML5</span>
+                                        <span class="skill-badge css">CSS3</span>
+                                        <span class="skill-badge js">JavaScript</span>
+                                        <span class="skill-badge java">Java</span>
+                                        <span class="skill-badge python">Python</span>
+                                    </div>
+                                </div>
+                                <div class="skills-category-group">
+                                    <span class="category-label">Frameworks & Libraries</span>
+                                    <div class="skills-tags-list">
+                                        <span class="skill-badge react">React.js</span>
+                                        <span class="skill-badge tailwind">Tailwind CSS</span>
+                                        <span class="skill-badge bootstrap">Bootstrap</span>
+                                    </div>
+                                </div>
+                                <div class="skills-category-group">
+                                    <span class="category-label">Databases & Platforms</span>
+                                    <div class="skills-tags-list">
+                                        <span class="skill-badge sql">MySQL</span>
+                                        <span class="skill-badge sql">SQL</span>
+                                        <span class="skill-badge firebase">Firebase</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hobbies -->
+                        <div class="resume-panel-section">
+                            <h3 class="panel-section-title"><i class="fas fa-heart"></i> Hobbies & Interests</h3>
+                            <div class="hobbies-grid" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.02);"><i class="fas fa-microchip" style="margin-right: 8px; color: var(--secondary-color);"></i> Learning new technologies</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.02);"><i class="fas fa-laptop-code" style="margin-right: 8px; color: var(--secondary-color);"></i> Coding / Programming</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.02);"><i class="fab fa-youtube" style="margin-right: 8px; color: var(--secondary-color);"></i> Watching tech videos</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.02);"><i class="fas fa-book-open" style="margin-right: 8px; color: var(--secondary-color);"></i> Reading tech blogs</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.02);"><i class="fas fa-puzzle-piece" style="margin-right: 8px; color: var(--secondary-color);"></i> Problem solving puzzles</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.02);"><i class="fas fa-chess" style="margin-right: 8px; color: var(--secondary-color);"></i> Playing chess</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.02);"><i class="fas fa-music" style="margin-right: 8px; color: var(--secondary-color);"></i> Listening to music</span>
+                                <span class="skill-badge" style="background: rgba(255,255,255,0.02);"><i class="fas fa-search" style="margin-right: 8px; color: var(--secondary-color);"></i> Exploring new tools</span>
+                            </div>
+                        </div>
+
+                        <!-- Languages -->
+                        <div class="resume-panel-section">
+                            <h3 class="panel-section-title"><i class="fas fa-language"></i> Languages</h3>
+                            <div class="languages-list" style="display: flex; gap: 15px;">
+                                <span class="skill-badge" style="border-color: rgba(99, 102, 241, 0.3); color: #fff;"><i class="fas fa-globe" style="margin-right: 8px; color: var(--main-color);"></i> Hindi</span>
+                                <span class="skill-badge" style="border-color: rgba(99, 102, 241, 0.3); color: #fff;"><i class="fas fa-globe" style="margin-right: 8px; color: var(--main-color);"></i> English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memories Lightbox -->
+    <div id="gallery-modal" class="modal gallery-modal">
+        <div class="modal-content gallery-modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body gallery-modal-body">
+                <img id="modal-gallery-img" src="" alt="Memory Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Memories Lock Modal -->
+    <div id="memories-lock-modal" class="modal">
+        <div class="modal-content lock-card">
+            <span class="close-modal">&times;</span>
+            <div class="lock-body">
+                <i class="fas fa-lock lock-icon"></i>
+                <h3>Locked Section</h3>
+                <p>Click badge to copy password, paste below & unlock:</p>
+                <button id="copy-key-btn" class="copy-badge">
+                    Key: ●●●●●●● <i class="far fa-copy"></i>
+                </button>
+                <div class="lock-input-row">
+                    <input type="password" id="lock-password-input" placeholder="Paste Password Here">
+                    <button id="unlock-btn" class="btn">Unlock</button>
+                </div>
+                <p id="lock-error-msg" class="lock-error"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memories Modal -->
+    <div id="memories-modal" class="modal memories-modal">
+        <div class="modal-content memories-modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body memories-modal-body">
+                <div class="modal-header-section">
+                    <h2 class="section-title">My <span>Memories</span></h2>
+                    <p class="section-subtitle">A collection of cherished moments, academic highlights, and milestones.
+                    </p>
+
+                    <!-- Memories Filter Controls -->
+                    <div class="memories-filters">
+                        <button class="filter-btn active" data-filter="all">All Memories</button>
+                        <button class="filter-btn" data-filter="college">College Life</button>
+                        <button class="filter-btn" data-filter="academic">Academic</button>
+                        <button class="filter-btn" data-filter="style">Style & Portraits</button>
+                        <button class="filter-btn" data-filter="milestones">Milestones</button>
+                    </div>
+                </div>
+
+                <div class="gallery-container">
+                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo1.png" alt="Memory 1" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">College Life</span>
+                                <h4>Group Selfie</h4>
+                                <p>Cherished moments with friends</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="academic" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo16.png" alt="Memory 16" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Academic</span>
+                                <h4>BCA Project Seminar</h4>
+                                <p>Delivering a technical presentation on C program structures in the seminar hall.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo13.png" alt="Memory 13" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Style & Portraits</span>
+                                <h4>Studio Portrait Day</h4>
+                                <p>Professional headshot session with creative color lighting.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="milestones" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo20.jpg" alt="Memory 20" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Milestones</span>
+                                <h4>Award Ceremony</h4>
+                                <p>Celebrating academic success and medals with batch friends.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo12.jpg" alt="Memory 12" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">College Life</span>
+                                <h4>College Fest Hosting</h4>
+                                <p>Anchoring and hosting the annual cultural festival on stage.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="academic" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo9.png" alt="Memory 9" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Collab</span>
+                                <h4>Group Presentation</h4>
+                                <p>BCA semester project team</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo17.jpg" alt="Memory 17" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Style & Portraits</span>
+                                <h4>Formal Event Style</h4>
+                                <p>Dressed in all-black formal style for the college event.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="milestones" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo14.png" alt="Memory 14" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Milestones</span>
+                                <h4>Varanasi Tour Diaries</h4>
+                                <p>Visiting Varanasi Junction during the college academic trip.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo19.png" alt="Memory 19" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">College Life</span>
+                                <h4>BCA Batchmates</h4>
+                                <p>A memorable group photo with class friends at the event.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="academic" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo2.png" alt="Memory 2" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Academic</span>
+                                <h4>Seminar Speech</h4>
+                                <p>Presenting project architectures</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo3.png" alt="Memory 3" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Style</span>
+                                <h4>Elite Suit Style</h4>
+                                <p>Formal dress code day</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="milestones" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo6.jpg" alt="Memory 6" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Milestones</span>
+                                <h4>Farewell Ceremony</h4>
+                                <p>Celebrating transition moments</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo15.png" alt="Memory 15" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">College Life</span>
+                                <h4>Campus Day Out</h4>
+                                <p>Capturing daily academic routines in the college corridor.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="academic" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo11.png" alt="Memory 11" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Practical</span>
+                                <h4>Lab Session</h4>
+                                <p>Coding algorithms in college lab</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo5.png" alt="Memory 5" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Portrait</span>
+                                <h4>Profile Portrait</h4>
+                                <p>Professional branding shoot</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="milestones" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo10.jpg" alt="Memory 10" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Leadership</span>
+                                <h4>Event Management</h4>
+                                <p>Organizing college cultural fest</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo21.jpg" alt="Memory 21" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">College Life</span>
+                                <h4>Faculty Interaction</h4>
+                                <p>Special guest and faculty interaction session at the college event.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo4.png" alt="Memory 4" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Style</span>
+                                <h4>Denim & Casuals</h4>
+                                <p>Campus outfit diaries</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo22.jpg" alt="Memory 22" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">College Life</span>
+                                <h4>Class Celebration</h4>
+                                <p>Joyful celebrations inside the classroom with crowns and medals.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo18.png" alt="Memory 18" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Style & Portraits</span>
+                                <h4>Lobby Shoot</h4>
+                                <p>A relaxed portrait session inside the seminar lobby.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo23.png" alt="Memory 23" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Style & Portraits</span>
+                                <h4>Rustic Vibes</h4>
+                                <p>Casual evening portrait session against a rustic brick backdrop.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
+                        <img src="assets/images/gallery/photo24.png" alt="Memory 24" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <span class="gallery-tag">Style & Portraits</span>
+                                <h4>Nature Walk</h4>
+                                <p>A serene portrait with a natural landscape and green fields background.</p>
+                            </div>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- All Projects Modal -->
+    <div id="all-projects-modal" class="modal all-projects-modal">
+        <div class="modal-content all-projects-modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body all-projects-modal-body">
+                <div class="modal-header-section">
+                    <h2 class="section-title">My <span>Projects</span> Archive</h2>
+                    <p class="section-subtitle">A comprehensive collection of my software applications, developer
+                        utilities, and academic portals.</p>
+
+                    <!-- Search Control inside Modal -->
+                    <div class="search-container">
+                        <input type="text" id="project-modal-search"
+                            placeholder="Search by title, description or tech stack...">
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                    <!-- Filter Controls inside Modal -->
+                    <div class="project-filters">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="react">React.js</button>
+                        <button class="filter-btn" data-filter="vanilla">Vanilla JS / API</button>
+                        <button class="filter-btn" data-filter="academic">Academic & Database</button>
+                    </div>
+
+                    <!-- Dynamic Results Bar -->
+                    <div class="archive-results-bar">
+                        <span class="results-label">Active Archive:</span>
+                        <span id="archive-count-badge" class="count-badge">Showing 7 of 7 Projects</span>
+                    </div>
+                </div>
+
+                <div class="project-container">
+                    <!-- Project 1: University Hub -->
+                    <div class="project-box glass-card" data-category="react" data-title="University-Hub Project"
+                        data-description="A comprehensive academic portal for Bihar universities providing real-time access to syllabus, past exam questions, lecture notes, and university announcements."
+                        data-tech="React, Tailwind CSS"
+                        data-img="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
+                        data-live="https://bihar-university-hub.vercel.app"
+                        data-github="https://github.com/sahilt56/bihar-university-hub">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
+                            alt="University-Hub Project">
+                        <div class="project-info">
+                            <div class="tech-tags">
+                                <span>React</span>
+                                <span>Tailwind CSS</span>
+                            </div>
+                            <h3>University-Hub Project</h3>
+                            <p>A comprehensive portal for Bihar universities with academic resources.</p>
+                            <div class="project-btns">
+                                <button class="btn view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: TechEraX Hub -->
+                    <div class="project-box glass-card" data-category="academic" data-title="TechEraX Hub"
+                        data-description="A massive All India University Portal providing real-time access to syllabus, notes, and academic resources for 100+ universities. Built for scale, speed, and cross-platform responsive devices."
+                        data-tech="HTML, CSS, JS, Portal Engine"
+                        data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+                        data-live="./all-india/index.html" data-github="https://github.com/dhirajkumar">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+                            alt="TechEraX Hub">
+                        <div class="project-info">
+                            <div class="tech-tags">
+                                <span>Portal</span>
+                                <span>Academic</span>
+                            </div>
+                            <h3>TechEraX Hub</h3>
+                            <p>All India University Syllabus & Notes Portal.</p>
+                            <div class="project-btns">
+                                <button class="btn view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Nexus Task Manager -->
+                    <div class="project-box glass-card" data-category="vanilla" data-title="Nexus Task Manager"
+                        data-description="A productivity tool designed to help teams organize tasks and collaborate in real-time. Features include drag-and-drop task boards, priority levels, status indicators, and background sync."
+                        data-tech="JavaScript, Firebase, CSS Grid"
+                        data-img="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop"
+                        data-live="https://example.com" data-github="https://github.com">
+                        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop"
+                            alt="Nexus Task Manager">
+                        <div class="project-info">
+                            <div class="tech-tags">
+                                <span>JavaScript</span>
+                                <span>Firebase</span>
+                            </div>
+                            <h3>Nexus Task Manager</h3>
+                            <p>Efficient task management system with real-time updates.</p>
+                            <div class="project-btns">
+                                <button class="btn view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: E-Commerce Elite Dashboard -->
+                    <div class="project-box glass-card" data-category="react" data-title="E-Commerce Elite Dashboard"
+                        data-description="A premium admin control panel featuring real-time sales statistics, charts, automated inventory tracking, dark/light modes, and comprehensive customer data analytics."
+                        data-tech="React, Tailwind, Chart.js"
+                        data-img="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                        data-live="https://example.com" data-github="https://github.com">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                            alt="E-Commerce Elite Dashboard">
+                        <div class="project-info">
+                            <div class="tech-tags">
+                                <span>React</span>
+                                <span>Chart.js</span>
+                            </div>
+                            <h3>E-Commerce Dashboard</h3>
+                            <p>A premium admin control panel with interactive data visualizations.</p>
+                            <div class="project-btns">
+                                <button class="btn view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: AI Chat Interface -->
+                    <div class="project-box glass-card" data-category="vanilla" data-title="AI Chat Interface"
+                        data-description="An interactive conversational AI assistant interface with glassmorphic UI, markdown formatting, local chat history preservation, and prompt templates."
+                        data-tech="JavaScript, API, Glassmorphic CSS"
+                        data-img="https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=2070&auto=format&fit=crop"
+                        data-live="https://example.com" data-github="https://github.com">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=2070&auto=format&fit=crop"
+                            alt="AI Chat Interface">
+                        <div class="project-info">
+                            <div class="tech-tags">
+                                <span>JavaScript</span>
+                                <span>Gemini API</span>
+                            </div>
+                            <h3>AI Chat Interface</h3>
+                            <p>Conversational AI UI with real-time API integrations and markdown.</p>
+                            <div class="project-btns">
+                                <button class="btn view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: BCA Student Portal -->
+                    <div class="project-box glass-card" data-category="academic" data-title="BCA Student Portal"
+                        data-description="A full-featured student database portal built for BCA college classes. Allows assignment uploads, grading panels, syllabus tracking, and GPA calculators."
+                        data-tech="PHP, MySQL, Bootstrap"
+                        data-img="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=2070&auto=format&fit=crop"
+                        data-live="https://example.com" data-github="https://github.com">
+                        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=2070&auto=format&fit=crop"
+                            alt="BCA Student Portal">
+                        <div class="project-info">
+                            <div class="tech-tags">
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                            </div>
+                            <h3>BCA Student Portal</h3>
+                            <p>Student database portal with assignment submission features.</p>
+                            <div class="project-btns">
+                                <button class="btn view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 7: Weather Cast App -->
+                    <div class="project-box glass-card" data-category="vanilla" data-title="Weather Cast App"
+                        data-description="A sleek weather forecast dashboard that adapts its visual theme based on the current weather condition. Displays 5-day forecast tables, search suggestions, and wind/humidity levels."
+                        data-tech="JS, OpenWeather API, CSS Flexbox"
+                        data-img="https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=2070&auto=format&fit=crop"
+                        data-live="https://example.com" data-github="https://github.com">
+                        <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=2070&auto=format&fit=crop"
+                            alt="Weather Cast App">
+                        <div class="project-info">
+                            <div class="tech-tags">
+                                <span>JavaScript</span>
+                                <span>Weather API</span>
+                            </div>
+                            <h3>Weather Cast App</h3>
+                            <p>Sleek weather dashboard with dynamic styling based on conditions.</p>
+                            <div class="project-btns">
+                                <button class="btn view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificates Modal -->
+    <div id="certificates-modal" class="modal certificates-modal">
+        <div class="modal-content certificates-modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body certificates-modal-body">
+                <div class="modal-header-section">
+                    <h2 class="section-title">My <span>Certifications</span> Archive</h2>
+                    <p class="section-subtitle">A collection of my academic, design, and software development
+                        credentials.</p>
+
+                    <!-- Filter Controls -->
+                    <div class="cert-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="dev">Development</button>
+                        <button class="filter-btn" data-filter="design">Design & IT</button>
+                        <button class="filter-btn" data-filter="achievements">Achievements</button>
+                    </div>
+                </div>
+
+                <div class="certificates-container">
+                    <!-- Python for Beginners -->
+                    <div class="premium-cert-card cert-card" data-category="dev" style="animation-delay: 0.05s;">
+                        <div class="premium-cert-img-wrapper">
+                            <span class="cert-platform-badge">Simplilearn</span>
+                            <img src="assets/images/certificates/cert-python.jpg" alt="Python for Beginners">
+                        </div>
+                        <div class="premium-cert-info">
+                            <span class="cert-issuer-tag">SkillUp • ID: 10726110</span>
+                            <h3>Python for Beginners</h3>
+                            <p>Foundations of Python programming, core data structures, algorithms, and development practices.</p>
+                            <div class="cert-view-cta">
+                                <span>View Certificate</span> <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ethical Hacking 101 -->
+                    <div class="premium-cert-card cert-card" data-category="dev" style="animation-delay: 0.1s;">
+                        <div class="premium-cert-img-wrapper">
+                            <span class="cert-platform-badge">Simplilearn</span>
+                            <img src="assets/images/certificates/cert-ethical-hacking.jpg" alt="Ethical Hacking 101">
+                        </div>
+                        <div class="premium-cert-info">
+                            <span class="cert-issuer-tag">SkillUp • ID: 10726568</span>
+                            <h3>Ethical Hacking 101</h3>
+                            <p>Beginners guide to cybersecurity fundamentals, network defense, scanning, and protocols.</p>
+                            <div class="cert-view-cta">
+                                <span>View Certificate</span> <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KYP -->
+                    <div class="premium-cert-card cert-card" data-category="design" style="animation-delay: 0.15s;">
+                        <div class="premium-cert-img-wrapper">
+                            <span class="cert-platform-badge">BSDM</span>
+                            <img src="assets/images/certificates/cert-kyp.jpg" alt="KYP Certificate">
+                        </div>
+                        <div class="premium-cert-info">
+                            <span class="cert-issuer-tag">Govt. of Bihar</span>
+                            <h3>Kushal Yuva Program (KYP)</h3>
+                            <p>Certification in IT Literacy, Language Skills, and Soft Skills with high proficiency.</p>
+                            <div class="cert-view-cta">
+                                <span>View Certificate</span> <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Cultural -->
+                    <div class="premium-cert-card cert-card" data-category="achievements"
+                        style="animation-delay: 0.1s;">
+                        <div class="premium-cert-img-wrapper">
+                            <span class="cert-platform-badge">HCPE</span>
+                            <img src="assets/images/certificates/cert-cultural.jpg" alt="Cultural Program Winner">
+                        </div>
+                        <div class="premium-cert-info">
+                            <span class="cert-issuer-tag">Himalaya College</span>
+                            <h3>Cultural Program Winner</h3>
+                            <p>Certificate of Appreciation for winning the Saraswati Puja Cultural Program.</p>
+                            <div class="cert-view-cta">
+                                <span>View Certificate</span> <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Rangoli -->
+                    <div class="premium-cert-card cert-card" data-category="achievements"
+                        style="animation-delay: 0.15s;">
+                        <div class="premium-cert-img-wrapper">
+                            <span class="cert-platform-badge">HCPE</span>
+                            <img src="assets/images/certificates/cert-rangoli.jpg" alt="Rangoli Competition Winner">
+                        </div>
+                        <div class="premium-cert-info">
+                            <span class="cert-issuer-tag">Himalaya College</span>
+                            <h3>Rangoli Competition Winner</h3>
+                            <p>Awarded for creative excellence and artistic skill in the college Rangoli competition.
+                            </p>
+                            <div class="cert-view-cta">
+                                <span>View Certificate</span> <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Frontend FCC -->
+                    <div class="premium-cert-card cert-card" data-category="dev" style="animation-delay: 0.2s;">
+                        <div class="premium-cert-img-wrapper">
+                            <span class="cert-platform-badge">FreeCodeCamp</span>
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
+                                alt="Frontend Development">
+                        </div>
+                        <div class="premium-cert-info">
+                            <span class="cert-issuer-tag">freeCodeCamp</span>
+                            <h3>Frontend Development</h3>
+                            <p>Comprehensive certification covering HTML5, CSS3, and JavaScript logic.</p>
+                            <div class="cert-view-cta">
+                                <span>View Certificate</span> <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. React Udemy -->
+                    <div class="premium-cert-card cert-card" data-category="dev" style="animation-delay: 0.25s;">
+                        <div class="premium-cert-img-wrapper">
+                            <span class="cert-platform-badge">Udemy</span>
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
+                                alt="React Masterclass">
+                        </div>
+                        <div class="premium-cert-info">
+                            <span class="cert-issuer-tag">Udemy Masterclass</span>
+                            <h3>React Masterclass</h3>
+                            <p>Advanced React patterns, Hooks, and State Management techniques.</p>
+                            <div class="cert-view-cta">
+                                <span>View Certificate</span> <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. UI/UX Google -->
+                    <div class="premium-cert-card cert-card" data-category="design" style="animation-delay: 0.3s;">
+                        <div class="premium-cert-img-wrapper">
+                            <span class="cert-platform-badge">Google</span>
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop"
+                                alt="UI/UX Design">
+                        </div>
+                        <div class="premium-cert-info">
+                            <span class="cert-issuer-tag">Google UX Course</span>
+                            <h3>UI/UX Design Essentials</h3>
+                            <p>Focused on User-Centered Design, Wireframing, and Figma Prototyping.</p>
+                            <div class="cert-view-cta">
+                                <span>View Certificate</span> <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. JS Algorithms FCC -->
+                    <div class="premium-cert-card cert-card" data-category="dev" style="animation-delay: 0.35s;">
+                        <div class="premium-cert-img-wrapper">
+                            <span class="cert-platform-badge">FreeCodeCamp</span>
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1974&auto=format&fit=crop"
+                                alt="JavaScript Algorithms">
+                        </div>
+                        <div class="premium-cert-info">
+                            <span class="cert-issuer-tag">freeCodeCamp</span>
+                            <h3>JavaScript Algorithms</h3>
+                            <p>Data structures and complex problem-solving in JavaScript.</p>
+                            <div class="cert-view-cta">
+                                <span>View Certificate</span> <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Web Security Coursera -->
+                    <div class="premium-cert-card cert-card" data-category="dev" style="animation-delay: 0.4s;">
+                        <div class="premium-cert-img-wrapper">
+                            <span class="cert-platform-badge">Coursera</span>
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
+                                alt="Web Security">
+                        </div>
+                        <div class="premium-cert-info">
+                            <span class="cert-issuer-tag">Coursera Security</span>
+                            <h3>Web Security Specialist</h3>
+                            <p>Understanding and implementing security protocols for modern web apps.</p>
+                            <div class="cert-view-cta">
+                                <span>View Certificate</span> <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Cloud AWS -->
+                    <div class="premium-cert-card cert-card" data-category="dev" style="animation-delay: 0.45s;">
+                        <div class="premium-cert-img-wrapper">
+                            <span class="cert-platform-badge">AWS</span>
+                            <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=2070&auto=format&fit=crop"
+                                alt="Cloud Foundations">
+                        </div>
+                        <div class="premium-cert-info">
+                            <span class="cert-issuer-tag">AWS Infrastructure</span>
+                            <h3>Cloud Foundations</h3>
+                            <p>Basic principles of cloud computing and AWS infrastructure.</p>
+                            <div class="cert-view-cta">
+                                <span>View Certificate</span> <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Back to Top -->
     <a href="#home" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
@@ -589,11 +1538,11 @@
                 <p>Passionate <strong>BCA student</strong> and Frontend Developer focused on creating elite web
                     experiences.</p>
                 <div class="footer-social">
-                    <a href="https://github.com/dhirajkumar" target="_blank" rel="noopener noreferrer"><i
+                    <a href="https://github.com/Dhiraj-kumar73" target="_blank" rel="noopener noreferrer"><i
                             class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/dhiraj-kumar-yadav-073075387?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    <a href="https://www.linkedin.com/in/dhiraj-kumar-073075387?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                         target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://x.com/DhirajKumay75" target="_blank" rel="noopener noreferrer"><i
+                    <a href="https://x.com/Dhiraj_Kumar73" target="_blank" rel="noopener noreferrer"><i
                             class="fab fa-twitter"></i></a>
                     <a href="https://www.instagram.com/dhirajkumaryadav554?igsh=NThkaWFwc2xvOGR0" target="_blank"
                         rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
@@ -606,6 +1555,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#memories">Memories</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -629,7 +1579,7 @@
             <p>© 2026 Dhiraj Kumar | Crafted with <i class="fas fa-heart text-red"></i></p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js?v=8.0"></script>
 </body>
 
 </html>
