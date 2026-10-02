@@ -1639,6 +1639,46 @@ footer::before {
     transform: scale(1) translateY(0);
 }
 
+/* Sticky Modal Top Bar for Image/Detail Modals */
+.modal-top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1060;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 22px;
+    background: rgba(7, 11, 19, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px 24px 0 0;
+}
+
+.modal-top-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--main-color);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.modal-top-bar .close-modal {
+    position: static;
+    top: auto;
+    right: auto;
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+}
+
 .close-modal {
     position: absolute;
     top: 22px;
