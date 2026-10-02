@@ -214,12 +214,10 @@ window.addEventListener('scroll', () => {
 
     // Header background change on scroll
     if (header) {
-        if (window.scrollY > 50) {
-            header.style.padding = "10px 10%";
-            header.classList.add('glass-card');
+        if (window.scrollY > 30) {
+            header.classList.add('scrolled');
         } else {
-            header.style.padding = "20px 10%";
-            header.classList.remove('glass-card');
+            header.classList.remove('scrolled');
         }
     }
 
