@@ -40,12 +40,16 @@
     --neon-glow: 0 0 30px rgba(79, 70, 229, 0.15);
 }
 
-/* --- Global Settings --- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    overflow-x: clip;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
     font-family: 'Inter', sans-serif;
 }
 
@@ -130,7 +134,7 @@ a:active {
 body {
     background: var(--bg-color);
     color: var(--text-color);
-    overflow-x: hidden;
+    overflow-x: clip;
     transition: var(--transition);
     line-height: 1.7;
     position: relative;
@@ -253,7 +257,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
     top: 0;
     left: 0;
     background: rgba(3, 7, 18, 0.8);
@@ -263,6 +268,11 @@ header {
     transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     border-bottom: 1px solid var(--glass-border);
     box-sizing: border-box;
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .light-mode header {
@@ -2080,13 +2090,13 @@ footer::before {
 @media (max-width: 768px) {
     header {
         padding: 15px 20px;
-        padding-top: max(15px, env(safe-area-inset-top));
+        padding-top: max(15px, env(safe-area-inset-top, 0px));
         min-height: 62px;
     }
 
     header.scrolled {
         padding: 12px 20px;
-        padding-top: max(12px, env(safe-area-inset-top));
+        padding-top: max(12px, env(safe-area-inset-top, 0px));
         min-height: 58px;
         background: rgba(3, 7, 18, 0.96);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -2220,15 +2230,15 @@ footer::before {
 
 @media (max-width: 480px) {
     header {
-        padding: 13px 15px;
-        padding-top: max(13px, env(safe-area-inset-top));
-        min-height: 56px;
+        padding: 14px 16px;
+        padding-top: max(14px, env(safe-area-inset-top, 0px));
+        min-height: 58px;
     }
 
     header.scrolled {
-        padding: 10px 15px;
-        padding-top: max(10px, env(safe-area-inset-top));
-        min-height: 52px;
+        padding: 12px 16px;
+        padding-top: max(12px, env(safe-area-inset-top, 0px));
+        min-height: 56px;
     }
 
     .logo {
