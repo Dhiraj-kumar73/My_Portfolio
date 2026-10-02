@@ -3,31 +3,35 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Dhiraj Kumar | Frontend Developer Portfolio</title>
+    <title>Dhiraj Kumar | Frontend Developer & BCA Student Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Portfolio of Dhiraj Kumar, a professional Frontend Developer and BCA student specialized in modern web architectures and UI/UX design.">
+        content="Portfolio of Dhiraj Kumar, a Frontend Developer and BCA student (9.0+ SGPA) specialized in React.js, modern JavaScript, and UI/UX design.">
     <meta name="keywords"
-        content="Dhiraj Kumar, Frontend Developer, Web Developer, BCA Student, Patna, Bihar, Portfolio, UI/UX Designer">
+        content="Dhiraj Kumar, Frontend Developer, Web Developer, BCA Student, Patna, Bihar, Portfolio, React Developer, UI/UX Designer">
     <meta name="author" content="Dhiraj Kumar">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/profile/about.png">
+    <link rel="apple-touch-icon" href="assets/images/profile/about.png">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourportfolio.com/">
-    <meta property="og:title" content="Dhiraj Kumar | Frontend Architect & UI/UX Specialist">
+    <meta property="og:url" content="https://dhiraj-kumar73.github.io/MyPortfolio/">
+    <meta property="og:title" content="Dhiraj Kumar | Frontend Developer & BCA Student">
     <meta property="og:description"
-        content="Portfolio of Dhiraj Kumar, a professional Frontend Developer specialized in modern web architectures and elite UI/UX design.">
-    <meta property="og:image" content="https://yourportfolio.com/dhiraj.jpg">
+        content="Portfolio of Dhiraj Kumar, a Frontend Developer and BCA Student (9.0+ SGPA) specializing in modern web applications and UI/UX design.">
+    <meta property="og:image" content="assets/images/profile/dhiraj.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yourportfolio.com/">
-    <meta property="twitter:title" content="Dhiraj Kumar | Frontend Architect">
-    <meta property="twitter:description" content="Portfolio of Dhiraj Kumar, specialized in modern web architectures.">
-    <meta property="twitter:image" content="https://yourportfolio.com/dhiraj.jpg">
+    <meta property="twitter:url" content="https://dhiraj-kumar73.github.io/MyPortfolio/">
+    <meta property="twitter:title" content="Dhiraj Kumar | Frontend Developer">
+    <meta property="twitter:description" content="Portfolio of Dhiraj Kumar, Frontend Developer & BCA Student.">
+    <meta property="twitter:image" content="assets/images/profile/dhiraj.jpg">
 
     <!-- CSS File -->
-    <link rel="stylesheet" href="assets/css/style.css?v=8.0">
+    <link rel="stylesheet" href="assets/css/style.css?v=9.6">
 
     <!-- Google Fonts: Outfit & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,50 +44,7 @@
 
 <body>
 
-    <!-- Preloader / Splash Screen (Personalized Avatar Interface) -->
-    <div id="preloader" class="preloader animate-in">
-        <!-- Cosmic Ambient Glow Orbs -->
-        <div class="preloader-orb orb-1"></div>
-        <div class="preloader-orb orb-2"></div>
-        <div class="preloader-orb orb-3"></div>
-        
-        <div class="preloader-content-card personalized-card">
-            <!-- Center Avatar Glowing Ring -->
-            <div class="avatar-glow-ring">
-                <img src="assets/images/profile/about.png" alt="Dhiraj Kumar" class="preloader-avatar-img">
-            </div>
 
-            <!-- Title & Subtitle Group -->
-            <h2 class="preloader-greet">Hi, I am</h2>
-            <h1 class="preloader-title">Dhiraj <span class="text-gradient">Kumar</span></h1>
-            <p class="preloader-subtitle">Frontend Developer & BCA Student</p>
-            
-            <!-- Interactive Action Button -->
-            <div class="preloader-action-container">
-                <button id="start-experience-btn" class="start-experience-btn discover-btn">
-                    <span class="btn-text">Enter Portfolio</span>
-                    <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Background Voiceover Video (Low Opacity Backdrop) -->
-    <video id="welcome-video" src="videos/Welcome.mp4" playsinline class="bg-welcome-video"></video>
-
-    <!-- Floating Audio Control Widget -->
-    <div id="audio-control-widget" class="audio-control-widget hide">
-        <span class="sound-wave">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </span>
-        <span class="widget-text">Welcome Voice Playing</span>
-        <button id="mute-widget-btn" aria-label="Mute welcome audio">
-            <i class="fas fa-volume-up"></i>
-        </button>
-    </div>
 
     <!-- Particles Canvas -->
     <canvas id="particles-canvas"></canvas>
@@ -124,19 +85,69 @@
         <div class="home-content" data-reveal="left">
             <h3>Hi, I am</h3>
             <h1>Dhiraj <span class="text-gradient">Kumar</span></h1>
-            <h3 class="typing-text">Frontend Architect</h3>
+            <h3 class="typing-text">Frontend Developer</h3>
             <p>
-                Specialized in building high-performance web architectures and immersive user experiences. Transforming
-                complex ideas into elegant, recruiter-ready solutions.
+                Passionate BCA student & Frontend Developer specializing in building responsive, high-performance web applications with React.js, modern JavaScript, and clean UI/UX designs.
             </p>
             <div class="btn-group">
                 <a href="#contact" class="btn btn-primary">Hire Me <i class="fas fa-arrow-right"></i></a>
-                <a href="#resume" class="btn btn-outline" id="resume-btn">Get Resume</a>
+                <a href="#resume" class="btn btn-outline" id="resume-btn"><i class="fas fa-file-alt"></i> Get Resume</a>
+                <a href="https://wa.me/917367807523?text=Hi%20Dhiraj,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Quick Chat</a>
             </div>
         </div>
 
         <div class="home-img" data-reveal="right">
-            <img src="assets/images/profile/dhiraj.jpg" alt="Dhiraj Kumar" loading="lazy">
+            <div class="hero-img-wrapper">
+                <img src="assets/images/profile/dhiraj.jpg" alt="Dhiraj Kumar" loading="lazy">
+                <div class="hero-academic-badge">
+                    <i class="fas fa-award"></i>
+                    <div>
+                        <span class="badge-title">9.0+ SGPA</span>
+                        <span class="badge-subtitle">Aryabhatta Univ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats & Academic Highlights -->
+    <section class="quick-stats-section" data-reveal="bottom">
+        <div class="stats-container glass-card">
+            <div class="stat-card">
+                <div class="stat-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
+                <div class="stat-info">
+                    <h3 class="stat-value"><span class="counter" data-target="9.02">9.02</span> <span class="stat-unit">SGPA</span></h3>
+                    <p class="stat-label">Current Academic Avg</p>
+                    <span class="stat-sublabel">Sem 1–3 Results (Aryabhatta Knowledge Univ)</span>
+                </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+                <div class="stat-icon-wrap"><i class="fas fa-code"></i></div>
+                <div class="stat-info">
+                    <h3 class="stat-value"><span class="counter" data-target="8">8</span>+ <span class="stat-unit">Projects</span></h3>
+                    <p class="stat-label">Web Apps & Portals</p>
+                    <span class="stat-sublabel">ShopScout, University Hub & more</span>
+                </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+                <div class="stat-icon-wrap"><i class="fas fa-layer-group"></i></div>
+                <div class="stat-info">
+                    <h3 class="stat-value"><span class="counter" data-target="15">15</span>+ <span class="stat-unit">Tech Skills</span></h3>
+                    <p class="stat-label">Tools & Frameworks</p>
+                    <span class="stat-sublabel">React, JavaScript, Python, SQL</span>
+                </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+                <div class="stat-icon-wrap"><i class="fas fa-certificate"></i></div>
+                <div class="stat-info">
+                    <h3 class="stat-value"><span class="counter" data-target="5">5</span>+ <span class="stat-unit">Credentials</span></h3>
+                    <p class="stat-label">Verified Certifications</p>
+                    <span class="stat-sublabel">Simplilearn, BSDM & College Honors</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -156,15 +167,15 @@
 
             <div class="about-content" data-reveal="right">
                 <h2 class="section-title text-left mb-20">About <span>Me</span></h2>
-                <h3>Frontend Developer</h3>
+                <h3>Frontend Developer & BCA Student</h3>
                 <p>
-                    I am a passionate BCA student with a strong interest in frontend development and creating modern, responsive, and user-friendly web applications. I enjoy turning ideas into interactive digital experiences using HTML, CSS, JavaScript, and React.js.
+                    I am a Frontend Developer and BCA student at Aryabhatta Knowledge University with a consistent academic track record (<strong>9.0+ SGPA</strong>). I specialize in engineering responsive, high-performance web applications using <strong>React.js, modern JavaScript (ES6+), HTML5, and CSS3</strong>.
                 </p>
                 <p>
-                    I continuously improve my skills by building real-world projects and exploring the latest web technologies. I believe in writing clean, maintainable code and creating interfaces that are both visually appealing and highly functional.
+                    Rather than just focusing on theory, I build real-world software—like <strong>ShopScout</strong> (a multi-store price discovery & comparison platform) and academic portals for university students. I care deeply about clean code architecture, intuitive UI/UX design, and fast loading speeds.
                 </p>
                 <p>
-                    As a quick learner and enthusiastic problem solver, I am eager to begin my career as a Frontend Developer, contribute to innovative projects, and grow alongside experienced professionals while delivering impactful digital solutions.
+                    Beyond code, I actively participate in technical seminars, group presentations, and college tech symposiums. Currently, I am seeking a <strong>Frontend Developer Internship or Junior Role</strong> to build impactful digital solutions alongside experienced engineering teams.
                 </p>
 
 
@@ -244,26 +255,13 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Card 4 -->
-            <div class="service-flip-card" data-reveal="bottom">
-                <div class="service-card-inner">
-                    <div class="service-card-front glass-card">
-                        <i class="fas fa-gauge-high"></i>
-                        <h3>Web Optimization</h3>
-                        <p>Making your website fast and easy to find on Google.</p>
-                    </div>
-                    <div class="service-card-back glass-card">
-                        <h3>Performance</h3>
-                        <ul>
-                            <li>Fast Loading Speed</li>
-                            <li>SEO Best Practices</li>
-                            <li>Clean Code Structure</li>
-                        </ul>
-                        <a href="#contact" class="btn">Boost Speed</a>
-                    </div>
-                </div>
-            </div>
+        <div class="view-all-container" data-reveal="bottom">
+            <button id="view-all-services-btn" class="btn btn-outline">
+                <span>View All Services</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
     </section>
 
@@ -272,13 +270,36 @@
     <section class="projects" id="projects">
         <h2 class="section-title" data-reveal>My <span>Projects</span></h2>
         <div class="project-container">
+            <!-- ShopScout -->
+            <div class="project-box glass-card" data-category="vanilla" data-reveal="bottom"
+                data-title="ShopScout"
+                data-description="India's premier product discovery & multi-store price comparison platform. Tracks real-time verified price drops, flash deals, and Amazon India offers across categories like Mobiles, Laptops, Audio, Gaming, and Fashion."
+                data-tech="HTML5, CSS3, JavaScript, Price Comparison"
+                data-img="assets/images/projects/shopscout.png"
+                data-live="https://shopscout-beryl.vercel.app/"
+                data-github="https://github.com/Dhiraj-kumar73/shopscout">
+                <span class="project-featured-tag"><i class="fas fa-crown"></i> Featured Live Project</span>
+                <img src="assets/images/projects/shopscout.png" alt="ShopScout Price Comparison">
+                <div class="project-info">
+                    <div class="tech-tags">
+                        <span>JavaScript</span>
+                        <span>Price Comparison</span>
+                    </div>
+                    <h3>ShopScout</h3>
+                    <p>India's premier product discovery & multi-store price comparison platform with real-time deals.</p>
+                    <div class="project-btns">
+                        <button class="btn view-details">View Details</button>
+                    </div>
+                </div>
+            </div>
+
             <!-- Project 1 -->
             <div class="project-box glass-card" data-reveal="bottom" data-title="University-Hub Project"
-                data-description="A comprehensive portal for Bihar universities with real-time access to academic resources"
-                data-tech="React, Tailwind Css"
+                data-description="A comprehensive academic portal for Bihar universities providing real-time access to academic resources, syllabus, notes, and announcements."
+                data-tech="React, Tailwind CSS"
                 data-img="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
                 data-live="https://bihar-university-hub.vercel.app"
-                data-github="https://github.com/sahilt56/bihar-university-hub">
+                data-github="https://github.com/Dhiraj-kumar73/bihar-university-hub">
                 <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
                     alt="University-Hub Project">
                 <div class="project-info">
@@ -299,7 +320,7 @@
                 data-description="A comprehensive All India University Portal providing real-time access to syllabus, notes, and academic resources for 100+ universities. Built for scale and speed."
                 data-tech="HTML, CSS, JS, Portal Engine"
                 data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-                data-live="./all-india/index.html" data-github="https://github.com/dhirajkumar">
+                data-live="./all-india/index.html" data-github="https://github.com/Dhiraj-kumar73">
                 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
                     alt="TechEraX Hub">
                 <div class="project-info">
@@ -309,27 +330,6 @@
                     </div>
                     <h3>TechEraX Hub</h3>
                     <p>All India University Syllabus & Notes Portal.</p>
-                    <div class="project-btns">
-                        <button class="btn view-details">View Details</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-box glass-card" data-reveal="bottom" data-title="Nexus Task Manager"
-                data-description="A productivity tool designed to help teams organize tasks and collaborate in real-time. Features include drag-and-drop task boards, priority levels, and progress tracking."
-                data-tech="JavaScript, Firebase, CSS Grid"
-                data-img="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop"
-                data-live="https://example.com" data-github="https://github.com">
-                <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop"
-                    alt="To-Do App">
-                <div class="project-info">
-                    <div class="tech-tags">
-                        <span>JavaScript</span>
-                        <span>Firebase</span>
-                    </div>
-                    <h3>Nexus Task Manager</h3>
-                    <p>Efficient task management system with real-time updates.</p>
                     <div class="project-btns">
                         <button class="btn view-details">View Details</button>
                     </div>
@@ -509,28 +509,6 @@
                     <span class="cert-date">Bihar Skill Development Mission</span>
                 </div>
             </div>
-
-            <div class="cert-card glass-card" data-reveal="bottom">
-                <div class="cert-img">
-                    <img src="assets/images/certificates/cert-cultural.jpg" alt="Cultural Program Winner">
-                </div>
-                <div class="cert-info">
-                    <h3>Cultural Program Winner</h3>
-                    <p>Certificate of Appreciation for winning the Saraswati Puja Cultural Program.</p>
-                    <span class="cert-date">Himalaya College of Prof. Education</span>
-                </div>
-            </div>
-
-            <div class="cert-card glass-card" data-reveal="bottom">
-                <div class="cert-img">
-                    <img src="assets/images/certificates/cert-rangoli.jpg" alt="Rangoli Competition Winner">
-                </div>
-                <div class="cert-info">
-                    <h3>Rangoli Competition Winner</h3>
-                    <p>Awarded for creative excellence and artistic skill in the college Rangoli competition.</p>
-                    <span class="cert-date">Himalaya College of Prof. Education</span>
-                </div>
-            </div>
         </div>
         <div class="view-all-container" data-reveal="bottom">
             <button id="view-all-certs-btn" class="btn btn-outline">
@@ -553,7 +531,23 @@
                     <i class="fas fa-envelope"></i>
                     <div>
                         <h4>Email Me</h4>
-                        <p>yadavdhirajkumar944@gmail.com</p>
+                        <p><a href="mailto:yadavdhirajkumar944@gmail.com" class="contact-link">yadavdhirajkumar944@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                    <div>
+                        <h4>WhatsApp Direct</h4>
+                        <p><a href="https://wa.me/917367807523?text=Hi%20Dhiraj,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" rel="noopener noreferrer" class="contact-link highlight-link">+91 7367807523 (Fastest Response)</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Call Directly</h4>
+                        <p><a href="tel:+917367807523" class="contact-link">+91 7367807523</a></p>
                     </div>
                 </div>
 
@@ -565,7 +559,7 @@
                     </div>
                 </div>
                 <div class="social">
-                    <a href="https://github.com/dhirajkumar" target="_blank" rel="noopener noreferrer" title="GitHub"><i
+                    <a href="https://github.com/Dhiraj-kumar73" target="_blank" rel="noopener noreferrer" title="GitHub"><i
                             class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/dhiraj-kumar-yadav-073075387?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                         target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -649,10 +643,6 @@
                 <div class="cert-modal-info">
                     <h3 id="modal-cert-title">Certificate Title</h3>
                     <p id="modal-cert-desc">Detailed description goes here...</p>
-                    <a href="#" id="modal-cert-download" download class="btn btn-primary">
-                        <span>Download Copy</span>
-                        <i class="fas fa-download"></i>
-                    </a>
                 </div>
             </div>
         </div>
@@ -731,7 +721,7 @@
                         <div class="resume-panel-section">
                             <h3 class="panel-section-title"><i class="fas fa-user-tie"></i> About Me</h3>
                             <p class="timeline-desc" style="font-size: 0.95rem; line-height: 1.6;">
-                                I am a BCA graduate with a strong interest in computer applications and software development. I have good knowledge of programming languages like Python and Java, along with web technologies such as HTML and CSS. I am a quick learner and always eager to explore new technologies. I am looking for an opportunity to start my career in the IT field and enhance my technical and professional skills.
+                                Dedicated BCA student at Aryabhatta Knowledge University (<strong>Current Avg: 9.02 SGPA</strong>) specializing in Frontend Development with React.js, modern JavaScript, and clean UI engineering. Demonstrated practical ability to turn concepts into fast, responsive web applications through real-world projects like <strong>ShopScout</strong>. Solid computer science foundation with proficiency in Python, Java, and relational databases. Seeking a frontend internship or junior developer role to contribute to production-grade software.
                             </p>
                         </div>
 
@@ -840,27 +830,14 @@
         <div class="modal-content gallery-modal-content glass-card">
             <span class="close-modal">&times;</span>
             <div class="modal-body gallery-modal-body">
-                <img id="modal-gallery-img" src="" alt="Memory Image">
-            </div>
-        </div>
-    </div>
-
-    <!-- Memories Lock Modal -->
-    <div id="memories-lock-modal" class="modal">
-        <div class="modal-content lock-card">
-            <span class="close-modal">&times;</span>
-            <div class="lock-body">
-                <i class="fas fa-lock lock-icon"></i>
-                <h3>Locked Section</h3>
-                <p>Click badge to copy password, paste below & unlock:</p>
-                <button id="copy-key-btn" class="copy-badge">
-                    Key: ●●●●●●● <i class="far fa-copy"></i>
-                </button>
-                <div class="lock-input-row">
-                    <input type="password" id="lock-password-input" placeholder="Paste Password Here">
-                    <button id="unlock-btn" class="btn">Unlock</button>
+                <div class="gallery-modal-img-wrap">
+                    <img id="modal-gallery-img" src="" alt="Memory Image">
                 </div>
-                <p id="lock-error-msg" class="lock-error"></p>
+                <div class="gallery-modal-info">
+                    <span id="modal-gallery-tag" class="gallery-modal-badge">Campus Life</span>
+                    <h3 id="modal-gallery-title">Memory Title</h3>
+                    <p id="modal-gallery-desc">Memory Description</p>
+                </div>
             </div>
         </div>
     </div>
@@ -871,261 +848,526 @@
             <span class="close-modal">&times;</span>
             <div class="modal-body memories-modal-body">
                 <div class="modal-header-section">
-                    <h2 class="section-title">My <span>Memories</span></h2>
-                    <p class="section-subtitle">A collection of cherished moments, academic highlights, and milestones.
-                    </p>
+                    <h2 class="section-title">Campus <span>Life & Highlights</span></h2>
+                    <p class="section-subtitle">A curated archive of academic presentations, leadership milestones, hands-on lab sessions, and campus achievements.</p>
 
                     <!-- Memories Filter Controls -->
                     <div class="memories-filters">
-                        <button class="filter-btn active" data-filter="all">All Memories</button>
-                        <button class="filter-btn" data-filter="college">College Life</button>
-                        <button class="filter-btn" data-filter="academic">Academic</button>
-                        <button class="filter-btn" data-filter="style">Style & Portraits</button>
-                        <button class="filter-btn" data-filter="milestones">Milestones</button>
+                        <button class="filter-btn active" data-filter="all"><i class="fas fa-layer-group"></i> All Moments</button>
+                        <button class="filter-btn" data-filter="academic"><i class="fas fa-laptop-code"></i> Academic & Seminars</button>
+                        <button class="filter-btn" data-filter="college"><i class="fas fa-users"></i> Campus & Team</button>
+                        <button class="filter-btn" data-filter="milestones"><i class="fas fa-trophy"></i> Awards & Milestones</button>
+                        <button class="filter-btn" data-filter="style"><i class="fas fa-user-tie"></i> Branding & Media</button>
                     </div>
                 </div>
 
                 <div class="gallery-container">
-                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo1.png" alt="Memory 1" loading="lazy">
+                    <!-- Photo 1: Campus Life -->
+                    <div class="gallery-item glass-card" data-category="college">
+                        <span class="gallery-card-badge"><i class="fas fa-users"></i> Campus Life</span>
+                        <img src="assets/images/gallery/photo1.png" alt="BCA Cohort" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">College Life</span>
-                                <h4>Group Selfie</h4>
-                                <p>Cherished moments with friends</p>
+                                <span class="gallery-tag">Campus Life</span>
+                                <h4>BCA Cohort & Peer Group</h4>
+                                <p>Collaborative campus life and batchmate camaraderie at Himalaya College.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="academic" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo16.png" alt="Memory 16" loading="lazy">
+
+                    <!-- Photo 16: BCA Seminar -->
+                    <div class="gallery-item glass-card" data-category="academic">
+                        <span class="gallery-card-badge"><i class="fas fa-chalkboard-teacher"></i> Academic</span>
+                        <img src="assets/images/gallery/photo16.png" alt="BCA Project Seminar" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Academic</span>
+                                <span class="gallery-tag">Academic & Seminars</span>
                                 <h4>BCA Project Seminar</h4>
                                 <p>Delivering a technical presentation on C program structures in the seminar hall.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo13.png" alt="Memory 13" loading="lazy">
+
+                    <!-- Photo 13: Studio Portrait -->
+                    <div class="gallery-item glass-card" data-category="style">
+                        <span class="gallery-card-badge"><i class="fas fa-user-tie"></i> Branding</span>
+                        <img src="assets/images/gallery/photo13.png" alt="Studio Portrait Day" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Style & Portraits</span>
-                                <h4>Studio Portrait Day</h4>
-                                <p>Professional headshot session with creative color lighting.</p>
+                                <span class="gallery-tag">Professional Branding</span>
+                                <h4>Studio Portrait Session</h4>
+                                <p>Creative developer portrait session with studio color lighting.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="milestones" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo20.jpg" alt="Memory 20" loading="lazy">
+
+                    <!-- Photo 20: Award Ceremony -->
+                    <div class="gallery-item glass-card" data-category="milestones">
+                        <span class="gallery-card-badge"><i class="fas fa-award"></i> Milestone</span>
+                        <img src="assets/images/gallery/photo20.jpg" alt="Award Ceremony" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Milestones</span>
-                                <h4>Award Ceremony</h4>
-                                <p>Celebrating academic success and medals with batch friends.</p>
+                                <span class="gallery-tag">Awards & Honors</span>
+                                <h4>Academic Award Ceremony</h4>
+                                <p>Celebrating academic success, medals, and semester achievements with peers.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo12.jpg" alt="Memory 12" loading="lazy">
+
+                    <!-- Photo 12: College Fest Hosting -->
+                    <div class="gallery-item glass-card" data-category="college">
+                        <span class="gallery-card-badge"><i class="fas fa-microphone"></i> Leadership</span>
+                        <img src="assets/images/gallery/photo12.jpg" alt="College Fest Hosting" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">College Life</span>
-                                <h4>College Fest Hosting</h4>
-                                <p>Anchoring and hosting the annual cultural festival on stage.</p>
+                                <span class="gallery-tag">Leadership & Events</span>
+                                <h4>College Fest Anchoring</h4>
+                                <p>Hosting and stage anchoring for the annual college cultural festival.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="academic" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo9.png" alt="Memory 9" loading="lazy">
+
+                    <!-- Photo 9: Group Presentation -->
+                    <div class="gallery-item glass-card" data-category="academic">
+                        <span class="gallery-card-badge"><i class="fas fa-laptop-code"></i> Academic</span>
+                        <img src="assets/images/gallery/photo9.png" alt="Group Presentation" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Collab</span>
-                                <h4>Group Presentation</h4>
-                                <p>BCA semester project team</p>
+                                <span class="gallery-tag">Team Collaboration</span>
+                                <h4>Technical Project Review</h4>
+                                <p>Cross-functional group presentation for BCA semester software project.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo17.jpg" alt="Memory 17" loading="lazy">
+
+                    <!-- Photo 17: Formal Event Style -->
+                    <div class="gallery-item glass-card" data-category="style">
+                        <span class="gallery-card-badge"><i class="fas fa-user-tie"></i> Profile</span>
+                        <img src="assets/images/gallery/photo17.jpg" alt="Formal Event Style" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Style & Portraits</span>
-                                <h4>Formal Event Style</h4>
-                                <p>Dressed in all-black formal style for the college event.</p>
+                                <span class="gallery-tag">Executive Style</span>
+                                <h4>Formal Symposium Assembly</h4>
+                                <p>Executive formal attire for the annual college conference and symposium.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="milestones" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo14.png" alt="Memory 14" loading="lazy">
+
+                    <!-- Photo 14: Varanasi Tour -->
+                    <div class="gallery-item glass-card" data-category="milestones">
+                        <span class="gallery-card-badge"><i class="fas fa-map-marked-alt"></i> Excursion</span>
+                        <img src="assets/images/gallery/photo14.png" alt="Varanasi Tour" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Milestones</span>
-                                <h4>Varanasi Tour Diaries</h4>
-                                <p>Visiting Varanasi Junction during the college academic trip.</p>
+                                <span class="gallery-tag">Academic Excursion</span>
+                                <h4>Educational Field Tour</h4>
+                                <p>Experiential learning and heritage excursion organized by university.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo19.png" alt="Memory 19" loading="lazy">
+
+                    <!-- Photo 19: BCA Batchmates -->
+                    <div class="gallery-item glass-card" data-category="college">
+                        <span class="gallery-card-badge"><i class="fas fa-users"></i> Campus Life</span>
+                        <img src="assets/images/gallery/photo19.png" alt="BCA Batchmates" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">College Life</span>
-                                <h4>BCA Batchmates</h4>
-                                <p>A memorable group photo with class friends at the event.</p>
+                                <span class="gallery-tag">Campus Community</span>
+                                <h4>BCA Developer Network</h4>
+                                <p>Memorable gathering and networking moments with college peer developers.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="academic" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo2.png" alt="Memory 2" loading="lazy">
+
+                    <!-- Photo 2: Seminar Speech -->
+                    <div class="gallery-item glass-card" data-category="academic">
+                        <span class="gallery-card-badge"><i class="fas fa-chalkboard-teacher"></i> Academic</span>
+                        <img src="assets/images/gallery/photo2.png" alt="Seminar Speech" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Academic</span>
-                                <h4>Seminar Speech</h4>
-                                <p>Presenting project architectures</p>
+                                <span class="gallery-tag">Technical Seminar</span>
+                                <h4>Architecture Presentation</h4>
+                                <p>Delivering speech on software design patterns and project architecture.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo3.png" alt="Memory 3" loading="lazy">
+
+                    <!-- Photo 3: Elite Suit Style -->
+                    <div class="gallery-item glass-card" data-category="style">
+                        <span class="gallery-card-badge"><i class="fas fa-user-tie"></i> Profile</span>
+                        <img src="assets/images/gallery/photo3.png" alt="Elite Suit Style" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Style</span>
-                                <h4>Elite Suit Style</h4>
-                                <p>Formal dress code day</p>
+                                <span class="gallery-tag">Professional Presence</span>
+                                <h4>Executive Formal Look</h4>
+                                <p>Professional presence representing computer applications department.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="milestones" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo6.jpg" alt="Memory 6" loading="lazy">
+
+                    <!-- Photo 6: Farewell Ceremony -->
+                    <div class="gallery-item glass-card" data-category="milestones">
+                        <span class="gallery-card-badge"><i class="fas fa-award"></i> Milestone</span>
+                        <img src="assets/images/gallery/photo6.jpg" alt="Farewell Ceremony" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Milestones</span>
-                                <h4>Farewell Ceremony</h4>
-                                <p>Celebrating transition moments</p>
+                                <span class="gallery-tag">Academic Milestones</span>
+                                <h4>Department Farewell Assembly</h4>
+                                <p>Honoring senior batches and celebrating achievements at college ceremony.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo15.png" alt="Memory 15" loading="lazy">
+
+                    <!-- Photo 15: Campus Day Out -->
+                    <div class="gallery-item glass-card" data-category="college">
+                        <span class="gallery-card-badge"><i class="fas fa-university"></i> Campus</span>
+                        <img src="assets/images/gallery/photo15.png" alt="Campus Day Out" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">College Life</span>
-                                <h4>Campus Day Out</h4>
-                                <p>Capturing daily academic routines in the college corridor.</p>
+                                <span class="gallery-tag">Campus Life</span>
+                                <h4>Campus Academic Routine</h4>
+                                <p>Daily student life, campus corridor discussions, and academic focus.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="academic" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo11.png" alt="Memory 11" loading="lazy">
+
+                    <!-- Photo 11: Lab Session -->
+                    <div class="gallery-item glass-card" data-category="academic">
+                        <span class="gallery-card-badge"><i class="fas fa-terminal"></i> Lab</span>
+                        <img src="assets/images/gallery/photo11.png" alt="Lab Session" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Practical</span>
-                                <h4>Lab Session</h4>
-                                <p>Coding algorithms in college lab</p>
+                                <span class="gallery-tag">Hands-on Lab</span>
+                                <h4>Algorithmic Problem Solving</h4>
+                                <p>Practical programming lab session implementing data structures and algorithms.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo5.png" alt="Memory 5" loading="lazy">
+
+                    <!-- Photo 5: Profile Portrait -->
+                    <div class="gallery-item glass-card" data-category="style">
+                        <span class="gallery-card-badge"><i class="fas fa-id-badge"></i> Headshot</span>
+                        <img src="assets/images/gallery/photo5.png" alt="Profile Portrait" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Portrait</span>
-                                <h4>Profile Portrait</h4>
-                                <p>Professional branding shoot</p>
+                                <span class="gallery-tag">Developer Profile</span>
+                                <h4>Corporate Headshot</h4>
+                                <p>Polished corporate portfolio portrait for technical profiles and conferences.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="milestones" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo10.jpg" alt="Memory 10" loading="lazy">
+
+                    <!-- Photo 10: Event Management -->
+                    <div class="gallery-item glass-card" data-category="milestones">
+                        <span class="gallery-card-badge"><i class="fas fa-tasks"></i> Leadership</span>
+                        <img src="assets/images/gallery/photo10.jpg" alt="Event Management" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Leadership</span>
-                                <h4>Event Management</h4>
-                                <p>Organizing college cultural fest</p>
+                                <span class="gallery-tag">Event Leadership</span>
+                                <h4>Fest Steering Committee</h4>
+                                <p>Organizing campus events, coordinating technical teams, and stage management.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo21.jpg" alt="Memory 21" loading="lazy">
+
+                    <!-- Photo 21: Faculty Interaction -->
+                    <div class="gallery-item glass-card" data-category="college">
+                        <span class="gallery-card-badge"><i class="fas fa-user-graduate"></i> Mentorship</span>
+                        <img src="assets/images/gallery/photo21.jpg" alt="Faculty Interaction" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">College Life</span>
-                                <h4>Faculty Interaction</h4>
-                                <p>Special guest and faculty interaction session at the college event.</p>
+                                <span class="gallery-tag">Faculty & Mentorship</span>
+                                <h4>Academic Mentorship Session</h4>
+                                <p>Direct interaction with guest faculty and professors during departmental seminar.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo4.png" alt="Memory 4" loading="lazy">
+
+                    <!-- Photo 4: Campus Casuals -->
+                    <div class="gallery-item glass-card" data-category="style">
+                        <span class="gallery-card-badge"><i class="fas fa-user"></i> Lifestyle</span>
+                        <img src="assets/images/gallery/photo4.png" alt="Campus Casuals" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Style</span>
-                                <h4>Denim & Casuals</h4>
-                                <p>Campus outfit diaries</p>
+                                <span class="gallery-tag">Campus Culture</span>
+                                <h4>Campus Casuals</h4>
+                                <p>Vibrant student life and youthful energy across college sessions.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="college" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo22.jpg" alt="Memory 22" loading="lazy">
+
+                    <!-- Photo 22: Class Celebration -->
+                    <div class="gallery-item glass-card" data-category="college">
+                        <span class="gallery-card-badge"><i class="fas fa-medal"></i> Recognition</span>
+                        <img src="assets/images/gallery/photo22.jpg" alt="Class Celebration" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">College Life</span>
-                                <h4>Class Celebration</h4>
-                                <p>Joyful celebrations inside the classroom with crowns and medals.</p>
+                                <span class="gallery-tag">Department Honors</span>
+                                <h4>Academic Excellence Honors</h4>
+                                <p>Classroom celebration and medal recognitions for top semester SGPA performance.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo18.png" alt="Memory 18" loading="lazy">
+
+                    <!-- Photo 18: Lobby Shoot -->
+                    <div class="gallery-item glass-card" data-category="style">
+                        <span class="gallery-card-badge"><i class="fas fa-user-tie"></i> Profile</span>
+                        <img src="assets/images/gallery/photo18.png" alt="Convention Lobby" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Style & Portraits</span>
-                                <h4>Lobby Shoot</h4>
-                                <p>A relaxed portrait session inside the seminar lobby.</p>
+                                <span class="gallery-tag">Professional Presence</span>
+                                <h4>Convention Lobby Shoot</h4>
+                                <p>Professional presence at academic symposium and tech exhibition.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo23.png" alt="Memory 23" loading="lazy">
+
+                    <!-- Photo 23: Rustic Vibes -->
+                    <div class="gallery-item glass-card" data-category="style">
+                        <span class="gallery-card-badge"><i class="fas fa-camera"></i> Portrait</span>
+                        <img src="assets/images/gallery/photo23.png" alt="Creative Headshot" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Style & Portraits</span>
-                                <h4>Rustic Vibes</h4>
-                                <p>Casual evening portrait session against a rustic brick backdrop.</p>
+                                <span class="gallery-tag">Media & Profiles</span>
+                                <h4>Creative Headshot</h4>
+                                <p>Modern creative portrait highlighting focus, personality, and developer mindset.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item glass-card" data-category="style" data-reveal="bottom">
-                        <img src="assets/images/gallery/photo24.png" alt="Memory 24" loading="lazy">
+
+                    <!-- Photo 24: Nature Walk -->
+                    <div class="gallery-item glass-card" data-category="style">
+                        <span class="gallery-card-badge"><i class="fas fa-leaf"></i> Wellness</span>
+                        <img src="assets/images/gallery/photo24.png" alt="Nature Walk" loading="lazy">
                         <div class="gallery-overlay">
                             <div class="gallery-info">
-                                <span class="gallery-tag">Style & Portraits</span>
-                                <h4>Nature Walk</h4>
-                                <p>A serene portrait with a natural landscape and green fields background.</p>
+                                <span class="gallery-tag">Life & Balance</span>
+                                <h4>Work-Life Harmony</h4>
+                                <p>Maintaining clarity, outdoor focus, and balance beyond the code editor.</p>
+                                <span class="gallery-view-btn"><span>View Full Photo</span> <i class="fas fa-arrow-right"></i></span>
                             </div>
-                            <i class="fas fa-search-plus"></i>
+                            <div class="gallery-zoom-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- All Services Modal -->
+    <div id="all-services-modal" class="modal all-services-modal">
+        <div class="modal-content all-services-modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body all-services-modal-body">
+                <div class="modal-header-section">
+                    <h2 class="section-title">My <span>Services</span> Archive</h2>
+                    <p class="section-subtitle">A comprehensive suite of modern web engineering, user interface design, and performance optimization services.</p>
+                </div>
+
+                <div class="service-container">
+                    <!-- Service 1: Web Development -->
+                    <div class="service-flip-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-front glass-card">
+                                <i class="fas fa-code"></i>
+                                <h3>Web Development</h3>
+                                <p>Creating clean, fast, and modern websites using the latest technologies.</p>
+                            </div>
+                            <div class="service-card-back glass-card">
+                                <h3>Tech I Use</h3>
+                                <ul>
+                                    <li>React.js & JavaScript</li>
+                                    <li>HTML5 & CSS3</li>
+                                    <li>Modern UI Frameworks</li>
+                                </ul>
+                                <a href="#contact" class="btn modal-service-cta">Start Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: UI/UX Design -->
+                    <div class="service-flip-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-front glass-card">
+                                <i class="fas fa-wand-magic-sparkles"></i>
+                                <h3>UI/UX Design</h3>
+                                <p>Designing beautiful and easy-to-use interfaces in Figma.</p>
+                            </div>
+                            <div class="service-card-back glass-card">
+                                <h3>My Process</h3>
+                                <ul>
+                                    <li>User-Friendly Layouts</li>
+                                    <li>Modern Visual Design</li>
+                                    <li>Prototyping in Figma</li>
+                                </ul>
+                                <a href="#contact" class="btn modal-service-cta">Hire Me</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Responsive Web -->
+                    <div class="service-flip-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-front glass-card">
+                                <i class="fas fa-display"></i>
+                                <h3>Responsive Web</h3>
+                                <p>Ensuring your website looks perfect on mobile and desktop.</p>
+                            </div>
+                            <div class="service-card-back glass-card">
+                                <h3>Quality</h3>
+                                <ul>
+                                    <li>Mobile-First Design</li>
+                                    <li>Cross-Device Testing</li>
+                                    <li>Pixel-Perfect Layouts</li>
+                                </ul>
+                                <a href="#contact" class="btn modal-service-cta">Check Mobile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Web Optimization -->
+                    <div class="service-flip-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-front glass-card">
+                                <i class="fas fa-gauge-high"></i>
+                                <h3>Web Optimization</h3>
+                                <p>Making your website fast and easy to find on Google.</p>
+                            </div>
+                            <div class="service-card-back glass-card">
+                                <h3>Performance</h3>
+                                <ul>
+                                    <li>Fast Loading Speed</li>
+                                    <li>SEO Best Practices</li>
+                                    <li>Clean Code Structure</li>
+                                </ul>
+                                <a href="#contact" class="btn modal-service-cta">Optimize</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Frontend Engineering & React -->
+                    <div class="service-flip-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-front glass-card">
+                                <i class="fab fa-react"></i>
+                                <h3>Frontend Engineering</h3>
+                                <p>Building dynamic single-page applications with reactive state and clean architecture.</p>
+                            </div>
+                            <div class="service-card-back glass-card">
+                                <h3>React Stack</h3>
+                                <ul>
+                                    <li>React Hooks & Router</li>
+                                    <li>Component Architecture</li>
+                                    <li>REST API Integration</li>
+                                </ul>
+                                <a href="#contact" class="btn modal-service-cta">Build App</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 6: Code Quality & Maintenance -->
+                    <div class="service-flip-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-front glass-card">
+                                <i class="fas fa-screwdriver-wrench"></i>
+                                <h3>Maintenance & Fixes</h3>
+                                <p>Troubleshooting responsive issues, performance bottlenecks, and code refactoring.</p>
+                            </div>
+                            <div class="service-card-back glass-card">
+                                <h3>Code Support</h3>
+                                <ul>
+                                    <li>CSS / Responsive Debugging</li>
+                                    <li>JavaScript Error Fixing</li>
+                                    <li>Performance Audit</li>
+                                </ul>
+                                <a href="#contact" class="btn modal-service-cta">Get Support</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1161,18 +1403,40 @@
                     <!-- Dynamic Results Bar -->
                     <div class="archive-results-bar">
                         <span class="results-label">Active Archive:</span>
-                        <span id="archive-count-badge" class="count-badge">Showing 7 of 7 Projects</span>
+                        <span id="archive-count-badge" class="count-badge">Showing 8 of 8 Projects</span>
                     </div>
                 </div>
 
                 <div class="project-container">
+                    <!-- ShopScout -->
+                    <div class="project-box glass-card" data-category="vanilla"
+                        data-title="ShopScout"
+                        data-description="India's premier product discovery & multi-store price comparison platform. Tracks real-time verified price drops, flash deals, and Amazon India offers across categories like Mobiles, Laptops, Audio, Gaming, and Fashion."
+                        data-tech="HTML5, CSS3, JavaScript, Price Comparison"
+                        data-img="assets/images/projects/shopscout.png"
+                        data-live="https://shopscout-beryl.vercel.app/"
+                        data-github="https://github.com/Dhiraj-kumar73/shopscout">
+                        <img src="assets/images/projects/shopscout.png" alt="ShopScout Price Comparison">
+                        <div class="project-info">
+                            <div class="tech-tags">
+                                <span>JavaScript</span>
+                                <span>Price Comparison</span>
+                            </div>
+                            <h3>ShopScout</h3>
+                            <p>India's premier product discovery & multi-store price comparison platform with real-time deals.</p>
+                            <div class="project-btns">
+                                <button class="btn view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Project 1: University Hub -->
                     <div class="project-box glass-card" data-category="react" data-title="University-Hub Project"
                         data-description="A comprehensive academic portal for Bihar universities providing real-time access to syllabus, past exam questions, lecture notes, and university announcements."
                         data-tech="React, Tailwind CSS"
                         data-img="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
                         data-live="https://bihar-university-hub.vercel.app"
-                        data-github="https://github.com/sahilt56/bihar-university-hub">
+                        data-github="https://github.com/Dhiraj-kumar73/bihar-university-hub">
                         <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
                             alt="University-Hub Project">
                         <div class="project-info">
@@ -1193,7 +1457,7 @@
                         data-description="A massive All India University Portal providing real-time access to syllabus, notes, and academic resources for 100+ universities. Built for scale, speed, and cross-platform responsive devices."
                         data-tech="HTML, CSS, JS, Portal Engine"
                         data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-                        data-live="./all-india/index.html" data-github="https://github.com/dhirajkumar">
+                        data-live="./all-india/index.html" data-github="https://github.com/Dhiraj-kumar73">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
                             alt="TechEraX Hub">
                         <div class="project-info">
@@ -1214,7 +1478,7 @@
                         data-description="A productivity tool designed to help teams organize tasks and collaborate in real-time. Features include drag-and-drop task boards, priority levels, status indicators, and background sync."
                         data-tech="JavaScript, Firebase, CSS Grid"
                         data-img="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop"
-                        data-live="https://example.com" data-github="https://github.com">
+                        data-live="https://shopscout-beryl.vercel.app/" data-github="https://github.com/Dhiraj-kumar73">
                         <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop"
                             alt="Nexus Task Manager">
                         <div class="project-info">
@@ -1527,6 +1791,15 @@
         </div>
     </div>
 
+    <!-- Floating Quick WhatsApp Button -->
+    <a href="https://wa.me/917367807523?text=Hi%20Dhiraj,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" 
+       id="quick-whatsapp-btn" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- Back to Top -->
     <a href="#home" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
@@ -1579,7 +1852,7 @@
             <p>© 2026 Dhiraj Kumar | Crafted with <i class="fas fa-heart text-red"></i></p>
         </div>
     </footer>
-    <script src="assets/js/script.js?v=8.0"></script>
+    <script src="assets/js/script.js?v=9.6"></script>
 </body>
 
 </html>

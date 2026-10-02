@@ -1,3 +1,27 @@
+// --- Force Page to Open from Start (Top) ---
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+
+// Prevent background scrolling while preloader is active
+if (document.querySelector('#preloader')) {
+    document.body.style.overflow = 'hidden';
+    if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname + window.location.search);
+    }
+}
+
+window.addEventListener('pageshow', () => {
+    if (document.querySelector('#preloader')) {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+    }
+});
+
 // --- Basic Selectors ---
 const menuIcon = document.querySelector('#menu-icon');
 const navbar = document.querySelector('.navbar');
@@ -50,7 +74,7 @@ navLinks.forEach(link => {
 // --- Typewriter Effect ---
 const typingText = document.querySelector('.typing-text');
 if (typingText) {
-    const roles = ["Frontend Developer", "UI/UX Designer", "BCA Student", "Web Specialist"];
+    const roles = ["Frontend Developer", "React.js Specialist", "BCA Student (9.0+ SGPA)", "UI/UX Designer"];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -95,16 +119,10 @@ const revealObserver = new IntersectionObserver((entries) => {
                 setTimeout(() => {
                     item.style.opacity = "1";
                     item.style.transform = "translateY(0)";
-                }, index * 150);
+                }, index * 100);
             });
-        } else {
-            entry.target.classList.remove('revealed');
-            const items = entry.target.querySelectorAll('.service-box, .project-box, .skill-item, .info-box, .timeline-item');
-            items.forEach((item) => {
-                item.style.opacity = "0";
-                item.style.transform = "translateY(30px)";
-                item.style.transition = "all 0.6s ease";
-            });
+            // Stop observing once revealed to prevent jittering loops
+            revealObserver.unobserve(entry.target);
         }
     });
 }, observerOptions);
@@ -309,7 +327,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (projectModal) {
         document.querySelectorAll('.view-details').forEach(btn => {
             btn.onclick = (e) => {
+                e.stopPropagation(); // prevent click from bubbling to window (which closes allProjectsModal)
                 const box = e.target.closest('.project-box');
+                if (!box) return;
                 projectModal.querySelector('#modal-title').textContent = box.dataset.title;
                 projectModal.querySelector('#modal-description').textContent = box.dataset.description;
                 projectModal.querySelector('#modal-image').src = box.dataset.img;
@@ -321,6 +341,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 box.dataset.tech.split(',').forEach(t => {
                     tags.innerHTML += `<span>${t.trim()}</span>`;
                 });
+
+                // Close the allProjectsModal if it is open (so project detail modal is on top)
+                const allProjectsModal = document.querySelector('#all-projects-modal');
+                if (allProjectsModal && allProjectsModal.classList.contains('active')) {
+                    allProjectsModal.classList.remove('active');
+                }
 
                 projectModal.classList.add('active');
                 body.style.overflow = 'hidden';
@@ -341,7 +367,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 certModal.querySelector('#modal-cert-img').src = card.querySelector('img').src;
                 certModal.querySelector('#modal-cert-title').textContent = card.querySelector('h3').textContent;
                 certModal.querySelector('#modal-cert-desc').textContent = card.querySelector('p').textContent;
-                certModal.querySelector('#modal-cert-download').href = card.querySelector('img').src;
                 certModal.classList.add('active');
                 body.style.overflow = 'hidden';
             };
@@ -375,7 +400,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (galleryModal) {
         document.querySelectorAll('.gallery-item').forEach(item => {
             item.onclick = () => {
-                galleryModal.querySelector('#modal-gallery-img').src = item.querySelector('img').src;
+                const img = item.querySelector('img');
+                const tag = item.querySelector('.gallery-tag') || item.querySelector('.gallery-card-badge');
+                const title = item.querySelector('h4');
+                const desc = item.querySelector('p');
+
+                if (img) galleryModal.querySelector('#modal-gallery-img').src = img.src;
+                const modalTag = galleryModal.querySelector('#modal-gallery-tag');
+                const modalTitle = galleryModal.querySelector('#modal-gallery-title');
+                const modalDesc = galleryModal.querySelector('#modal-gallery-desc');
+
+                if (modalTag && tag) modalTag.textContent = tag.textContent.trim();
+                if (modalTitle && title) modalTitle.textContent = title.textContent.trim();
+                if (modalDesc && desc) modalDesc.textContent = desc.textContent.trim();
+
                 galleryModal.classList.add('active');
                 body.style.overflow = 'hidden';
             };
@@ -387,88 +425,26 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // Memories Modal
+    // Memories Modal (Direct Recruiter Access - Zero Friction)
     const memoriesModal = document.querySelector('#memories-modal');
-    const memoriesLockModal = document.querySelector('#memories-lock-modal');
-    const lockPasswordInput = document.querySelector('#lock-password-input');
-    const unlockBtn = document.querySelector('#unlock-btn');
-    const lockErrorMsg = document.querySelector('#lock-error-msg');
     const memoriesBtns = document.querySelectorAll('a[href="#memories"]');
     
-    if (memoriesModal && memoriesLockModal) {
+    if (memoriesModal) {
         memoriesBtns.forEach(btn => {
             btn.onclick = (e) => {
                 e.preventDefault();
-                memoriesLockModal.classList.add('active');
+                memoriesModal.classList.add('active');
                 body.style.overflow = 'hidden';
-                lockPasswordInput.value = '';
-                lockErrorMsg.classList.remove('active');
-                setTimeout(() => {
-                    lockPasswordInput.focus();
-                }, 100);
             };
         });
 
-        memoriesLockModal.querySelector('.close-modal').onclick = () => {
-            memoriesLockModal.classList.remove('active');
-            body.style.overflow = 'auto';
-        };
-
-        // Handle unlock verification
-        const handleUnlock = () => {
-            const enteredPassword = lockPasswordInput.value;
-            if (enteredPassword === 'DhirajK') {
-                memoriesLockModal.classList.remove('active');
-                memoriesModal.classList.add('active');
-            } else {
-                // Wrong password animation and message
-                lockErrorMsg.textContent = 'Incorrect password! Try again.';
-                lockErrorMsg.classList.add('active');
-                
-                // Shake effect on input card
-                const modalContent = memoriesLockModal.querySelector('.lock-card');
-                modalContent.classList.add('shake-element');
-                setTimeout(() => {
-                    modalContent.classList.remove('shake-element');
-                }, 400);
-                
-                lockPasswordInput.value = '';
-                lockPasswordInput.focus();
-            }
-        };
-
-        unlockBtn.onclick = handleUnlock;
-
-        lockPasswordInput.onkeydown = (e) => {
-            if (e.key === 'Enter') {
-                handleUnlock();
-            }
-        };
-
-        const copyKeyBtn = document.querySelector('#copy-key-btn');
-        if (copyKeyBtn) {
-            copyKeyBtn.onclick = () => {
-                navigator.clipboard.writeText('DhirajK').then(() => {
-                    // Visual feedback
-                    copyKeyBtn.innerHTML = 'Copied! <i class="fas fa-check"></i>';
-                    copyKeyBtn.style.borderColor = '#10b981';
-                    copyKeyBtn.style.color = '#10b981';
-                    
-                    setTimeout(() => {
-                        copyKeyBtn.innerHTML = 'Key: ●●●●●●● <i class="far fa-copy"></i>';
-                        copyKeyBtn.style.borderColor = '';
-                        copyKeyBtn.style.color = '';
-                    }, 1500);
-                }).catch(err => {
-                    console.error('Failed to copy text: ', err);
-                });
+        const memCloseBtn = memoriesModal.querySelector('.close-modal');
+        if (memCloseBtn) {
+            memCloseBtn.onclick = () => {
+                memoriesModal.classList.remove('active');
+                body.style.overflow = 'auto';
             };
         }
-
-        memoriesModal.querySelector('.close-modal').onclick = () => {
-            memoriesModal.classList.remove('active');
-            body.style.overflow = 'auto';
-        };
 
         // Memories Filters Handler
         const memFilterBtns = memoriesModal.querySelectorAll('.memories-filters .filter-btn');
@@ -483,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 galleryItems.forEach(item => {
                     if (filterValue === 'all' || item.dataset.category === filterValue) {
-                        item.style.display = 'inline-block';
+                        item.style.display = '';
                         item.style.opacity = '1';
                         item.style.transform = 'translateY(0)';
                     } else {
@@ -507,6 +483,32 @@ document.addEventListener('DOMContentLoaded', () => {
             certificatesModal.classList.remove('active');
             body.style.overflow = 'auto';
         };
+    }
+
+    // All Services Modal
+    const allServicesModal = document.querySelector('#all-services-modal');
+    const viewAllServicesBtn = document.querySelector('#view-all-services-btn');
+
+    if (allServicesModal && viewAllServicesBtn) {
+        viewAllServicesBtn.onclick = () => {
+            allServicesModal.classList.add('active');
+            body.style.overflow = 'hidden';
+        };
+
+        const closeServicesModalBtn = allServicesModal.querySelector('.close-modal');
+        if (closeServicesModalBtn) {
+            closeServicesModalBtn.onclick = () => {
+                allServicesModal.classList.remove('active');
+                body.style.overflow = 'auto';
+            };
+        }
+
+        allServicesModal.querySelectorAll('.modal-service-cta').forEach(btn => {
+            btn.onclick = () => {
+                allServicesModal.classList.remove('active');
+                body.style.overflow = 'auto';
+            };
+        });
     }
 
     // All Projects Modal
@@ -536,16 +538,16 @@ document.addEventListener('DOMContentLoaded', () => {
             memoriesModal.classList.remove('active');
             body.style.overflow = 'auto';
         }
-        if (event.target === memoriesLockModal) {
-            memoriesLockModal.classList.remove('active');
-            body.style.overflow = 'auto';
-        }
         if (event.target === certificatesModal) {
             certificatesModal.classList.remove('active');
             body.style.overflow = 'auto';
         }
         if (event.target === allProjectsModal) {
             allProjectsModal.classList.remove('active');
+            body.style.overflow = 'auto';
+        }
+        if (event.target === allServicesModal) {
+            allServicesModal.classList.remove('active');
             body.style.overflow = 'auto';
         }
     });
@@ -714,69 +716,57 @@ document.querySelectorAll('.service-flip-card').forEach(card => {
     });
 });
 
-// --- Preloader & Background Voiceover Intro ---
-const preloader = document.querySelector('#preloader');
-const startBtn = document.querySelector('#start-experience-btn');
-const welcomeVideo = document.querySelector('#welcome-video');
-const audioWidget = document.querySelector('#audio-control-widget');
-const muteWidgetBtn = document.querySelector('#mute-widget-btn');
+// --- Animated Counter for Quick Stats Bar ---
+function initStatsCounters() {
+    const statsSection = document.querySelector('.quick-stats-section');
+    if (!statsSection) return;
 
-if (startBtn && welcomeVideo) {
-    startBtn.onclick = () => {
-        // 1. Immediately fade out preloader to reveal home page
-        if (preloader) {
-            preloader.classList.add('fade-out');
-            setTimeout(() => {
-                preloader.remove();
-            }, 800);
-        }
+    let started = false;
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !started) {
+                started = true;
+                const counters = document.querySelectorAll('.stat-info .counter');
+                counters.forEach(counter => {
+                    const target = parseFloat(counter.getAttribute('data-target'));
+                    const isDecimal = target % 1 !== 0;
+                    const duration = 1200;
+                    const steps = 40;
+                    const stepTime = duration / steps;
+                    let current = 0;
+                    const increment = target / steps;
 
-        // 2. Play video in background (opacity and voice)
-        welcomeVideo.classList.add('playing');
-        welcomeVideo.play().catch(error => {
-            console.error("Autoplay voice welcome blocked by browser restrictions:", error);
-            // Muted fallback
-            welcomeVideo.muted = true;
-            welcomeVideo.play();
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.textContent = isDecimal ? target.toFixed(2) : Math.round(target);
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = isDecimal ? current.toFixed(2) : Math.floor(current);
+                        }
+                    }, stepTime);
+                });
+                statsObserver.unobserve(statsSection);
+            }
         });
+    }, { threshold: 0.2 });
 
-        // 3. Show floating audio widget
-        if (audioWidget) {
-            audioWidget.classList.remove('hide');
-            // Force animation trigger
-            audioWidget.offsetHeight;
-            audioWidget.classList.add('show');
-        }
-    };
+    statsObserver.observe(statsSection);
 }
 
-// Mute/Unmute toggle for floating audio widget
-if (welcomeVideo && muteWidgetBtn && audioWidget) {
-    muteWidgetBtn.onclick = () => {
-        if (welcomeVideo.muted) {
-            welcomeVideo.muted = false;
-            audioWidget.classList.remove('muted');
-            muteWidgetBtn.innerHTML = "<i class='fas fa-volume-up'></i>";
-        } else {
-            welcomeVideo.muted = true;
-            audioWidget.classList.add('muted');
-            muteWidgetBtn.innerHTML = "<i class='fas fa-volume-mute'></i>";
-        }
-    };
-}
+document.addEventListener('DOMContentLoaded', () => {
+    initStatsCounters();
 
-// Fade out and cleanup when background video finishes playing
-if (welcomeVideo) {
-    welcomeVideo.onended = () => {
-        welcomeVideo.classList.remove('playing');
-        if (audioWidget) {
-            audioWidget.classList.remove('show');
-            setTimeout(() => {
-                audioWidget.classList.add('hide');
-                welcomeVideo.remove();
-                audioWidget.remove();
-            }, 500);
-        }
-    };
-}
+    // Service Card Flip
+    document.querySelectorAll('.service-flip-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn') || e.target.closest('.btn')) return;
+            const inner = card.querySelector('.service-card-inner');
+            if (inner) {
+                inner.classList.toggle('flipped');
+            }
+        });
+    });
+});
+
 
